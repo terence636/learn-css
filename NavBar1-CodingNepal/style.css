@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+nav {
+    background-color: #34495e;
+    color: white;
+    width: 100%;
+
+}
+
+.logo {
+    line-height: 80px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 20px;
+}
+
+nav ul {
+    float: right;
+    line-height: 80px;
+    margin-right: 20px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+nav a {
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+a.active,
+a:hover {
+    border: 1px solid white;
+    transition: 0.5s ease;
+}
+
+nav #icon {
+    color: white;
+    font-size: 20px;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.bg {
+    background-image: url('ps.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 80px);
+    width: 100%;
+}
+
+@media (max-width: 1048px) {
+    .logo {
+        font-size: 2rem;
+        padding-left: 60px;
+    }
+
+    nav a {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 909px) {
+    nav #icon {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        /* height: calc(100vh - 80px); */
+        background: #2f3640;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s ease;
+    }
+
+    nav li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav a {
+        font-size: 20px;
+    }
+
+    a.active,
+    a:hover {
+        border: none;
+        color: #3498db;
+    }
+    
+    nav ul.show{
+        left: 0;
+    }
+}

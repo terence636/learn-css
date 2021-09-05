@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+/*
+1. Overflow works for blocks element with a specified height
+2. visible: overflow not clipped
+3. scroll: overflow is clipped with scroll bar added
+*/
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(218, 203, 203);
+    color: #222;
+    margin: 0;
+    overflow-x: hidden; /* visible is the default*/
+    
+}
+
+.container {
+    background-color: skyblue;
+    width: 100vw;
+    min-height: 100vh; /* if content less than this then this applied*/
+    padding: 50px;
+    transition: transform 0.5s linear;
+    transform-origin: top left;
+
+}
+
+/*
+1. fixed and absolute element is removed from the flow of the documents.
+Other elements behave as if it's not even there 
+2. Diff between fixed and absolute is fixed is relative to document not 
+any particular parent and unaffected by scrolling
+*/
+.circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+/*
+1. Position relative so that position absolute of buttons are relative to here 
+2. This circle gonna rotate so added the transition
+*/
+.circle {
+    background-color: coral;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+/*
+Both buttons are remove from the flow of documents and behave
+like there are at different layer. Hence they overlap each other
+*/
+.circle button {
+
+    position: absolute;
+    /* top: 60%;
+    left: 50%; */
+    /* height: 100px; */
+    background: transparent;
+    border: 0;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.circle button#open {
+    top: 60%;
+    left: 60%;
+}
+.circle button#close {
+    top: 70%;
+    left: 50%;
+    transform: rotate(75deg);
+    transform-origin: top left;
+}
+/*
+:focus is psuedo classe where is action based for example active,focus,hover
+*/
+
+.circle button:focus {
+    outline: none;
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+    /* transform-origin: top left;
+    transition: transform 0.5s linear; */
+}
+
+.container.show-nav .circle {
+    transform: rotate(-30deg)
+}
+
+.content img {
+    max-width: 100%;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 70px auto;
+}
+
+.content h1 {
+    margin: 0;
+}
+
+.content small {
+    color: #555;
+    font-style: italic;
+}
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0px;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    margin: 40px 0;
+    transform: translateX(-180%);
+    transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+nav ul li + li {
+    margin-left: 15px;
+}
+
+nav ul li+li+li{
+    margin-left: 30px;
+}
+
+/*
+.show-nav and nav is sibling
+so nav immediate after .show-nav is .show-nav + nav
+*/
+.container.show-nav + nav ul li{
+    transform: translateX(0%);
+    transition-delay: 0.3s;
+}
+
+
+/*
+1. em is based on current element font size
+2. rem is based on root font size which is 16px
+3. float left/right to allow the element to float on top of current element
+*/
+.test1 {
+    font-size: 20px;
+    background-color: red;
+    color: black;
+    float: right;
+    width: 3em;
+    height: 2rem;
+}
+
+.test2 {
+    background-color: red;
+    color: black;
+    float: right;
+    width: 3em;
+    height: 2em;
+}
