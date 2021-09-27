@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    background-image: url('ps.jpg');
+    height: 50vh;
+    width: 50vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+
+}
+
+.welcome {
+    position: absolute;
+    left: 50%;
+    color: blue;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-decoration: underline wavy red;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-style: oblique;
+    background-color: yellow;
+    line-height: 100px;
+    width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.generation {
+    color: red;
+    padding: 40%;
+    
+}
+
+.rotate {
+    width: 10rem;
+    height: 10rem;
+    background-color: skyblue;
+    /* margin: 10rem; */
+    transform: perspective(200px) rotateX(45deg) rotate(90deg);
+    font-size: 2rem;
+    text-align: center;
+    margin: auto;
+}
+
+.skew {
+    background-color: orange;
+    width: 10rem;
+    height: 10rem;
+    text-align: center;
+    margin-left: 20%;
+    font-size: 2rem;
+    transform: skew(20deg, 20deg);
+    border-radius: 50%;
+}
+
+.skew:hover {
+    background: red;
+    animation: colors 3s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes colors {
+    0% {
+        background: yellow;
+    }
+    50% {
+        background: blue;
+    }
+    100% {
+        background: green;
+    }
+}
